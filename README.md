@@ -11,7 +11,7 @@
     https://nodejs.org/ko/download
 
 
-2. 웹서버 모듈("express") 설치
+웹서버 모듈("express") 설치
 
     npm install --global express
 
