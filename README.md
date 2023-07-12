@@ -16,13 +16,16 @@ node.js 설치 -  운영체제별 LTS(안정화) 버전 다운로드/실행설�
 
     npm install cors cors-anywhere
 
-4. VS Code 확장모듈("code runner") 설치
+VS Code 확장모듈("code runner") 설치
    
-5. 프록시 서버 실행
+
+프록시 서버 실행
    
    서버 프로그램(proxy.js) 실행
 
 
+
+***
 
 
 ### 실습 6
