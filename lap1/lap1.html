@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        table, th, td {
+          border:1px solid #ccc;
+          border-collapse: collapse; 
+        }
+        th, td { padding:10px 20px; }
+        h2 {
+            /* font:bold; */
+        }
+      </style>
+  </head>
+  <body>
+    <b><h2>배정시간표 작성하기</h2></b>
+    <table>
+        <caption>자바스크립트 프로그래밍 헬퍼 배정시간</caption>
+        <colgroup>
+            <col style="background-color:#eee; width: 120px;">
+            <!-- <col> -->
+            <col style="width:150px">
+            <col style="width:150px">
+            <col style="width:150px">
+            <col style="width:150px">
+          </colgroup>
+        <div id ="TimeTableMake">
+            <thead>
+                <tr>
+                    <th>요일/시간</th>
+                    <th>2-3교시</th>
+                    <th>4-5교시</th>
+                    <th>6-7교시</th>
+                    <th>8-9교시</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2">월-화요일</td>
+                    <td colspan="2">윤선영</td>
+                    <td rowspan="2">홍길동</td>
+                    <td rowspan="5" ><video src="salad.mp4" controls width="270rem"></video> <br>배정없음 </td>
+                </tr>
+                <tr>
+                    <td colspan="2">박영수</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">수-목요일</td>
+                    <td rowspan="2">한나라</td>
+                    <td rowspan="2">민영식</td>
+                    <td>박영수</td>
+                    
+                </tr>
+                <tr>
+                    <td>윤선영</td>
+                </tr>
+                <tr>
+                    <td>금요일</td>
+                    <td colspan="3">김철수</td>
+                </tr>
+
+            </tbody>
+        </div>
+    </table>
+
+    <h2>수강과목 신청하기</h2>
+    <div id="classappli">
+        <form>
+            <fieldset>
+                <legend>수강 과목 선택</legend>
+                    <h4><b>웹 클라이언트컴퓨팅 분반 선택</b></h4>
+                    <ul>
+                        <li>
+                            <input type="radio" id ="1bunban" name="class">
+                            <label for="1bunban">1분반</label>
+                        </li>
+                        <li>
+                            <input type="radio" id = "2bunban" name="class">
+                            <label for="2bunban">2분반</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="3bunban" name ="class">
+                            <label for="2bunban">3분반</label>
+                        </li>
+                    </ul>
+            </fieldset>
+            <fieldset>
+                <legend>학생 정보</legend>
+                <ul>
+                    <li>
+                        <label for="usrname">이름</label> 
+                        <input type="text" id="usrname">
+                    </li>
+                    <li>
+                        <label for="usremail">이메일</label> 
+                        <input type="email" id="usremail">
+                    </li>
+                    <li>
+                        <label for="date">신청일시</label>
+                        <input type="datetime-local" id="date">
+                    </li> 
+                    <li>
+                        <label for="memo">메모</label>
+                        <textarea id="memo" cols="40" rows="4"></textarea>
+                    </li>
+                </ul>
+            </fieldset>
+            <div>
+                <input type="submit" value="신청하기"> 
+                <input type="reset" value="취소하기">
+            </div> 
+        </form>
+    </div>
+  </body>
+</html>

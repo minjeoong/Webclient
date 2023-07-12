@@ -1,0 +1,144 @@
+#container { 
+	width:600px;
+	margin:0 auto;
+	
+}
+#prod-pic, #desc { 
+	float:left;
+}
+#prod-pic { 			
+	margin:20px 20px auto 10px;
+	padding:0;
+}
+#cup { 			
+	box-shadow:1px 1px 2px #eee;
+	outline:1px dashed #ccc;			
+	outline-offset: -7px;
+}
+
+
+
+#small-pic img:hover {
+	cursor:pointer;
+}		
+#desc {  
+	width:300px;
+	padding-top:20px;
+	margin-bottom:50px;
+}
+.bluetext {
+	color:#4343ff;
+	font-weight:bold;
+}
+#desc button {
+	margin-top:20px;
+	margin-bottom:20px;
+	width:100%;
+	padding:10px;
+}
+#desc ul {
+	list-style:none;
+}
+#desc li{
+	font-size:0.9em;
+	line-height:1.8;
+} 
+#desc a {
+	text-decoration: none;
+	font-size:0.9em;
+	color:blue;
+	padding-left:40px;
+}
+hr {
+	clear:both;
+	border:1px dashed #f5f5f5;
+}
+#detail {
+	padding-top:20px;
+	display:none;
+}
+#detail li {
+	font-size:0.9em;
+	line-height:1.4;
+}
+h1 { 
+	font-size:2em;
+}
+h2 {
+	font-size:1.5em;
+	color:#bebebe;
+	font-weight:normal;
+}
+h3 {  
+	font-size:1.1em;
+	color:#222;
+}
+p { 
+	font-size:0.9em;
+	line-height:1.4;
+	text-align: justify;
+}
+
+
+#container1{
+	display: block;
+}
+#container2{
+	display: none;
+}
+#container3{
+	display: none;
+}
+
+
+#small-pic > div + .small{
+	width: 60px;
+	height: 60px;
+	
+} 
+#small-pic > div {
+
+	display: inline-block;
+
+} 
+
+.small {
+	width:60px;
+	height:60px;
+	transition:all 3s;
+	
+}
+
+#small-pic {
+	margin-top:40px;
+	margin-right:20px;
+	list-style: none;
+	padding:0;
+	
+}
+
+#small-pic > li {
+	float:left;
+	margin-right:10px;
+	
+}
+
+#rotatex:hover > .small {
+	transform: rotateX(360deg);
+	border: 5px solid red;
+	width: 70px;
+	height: 70px;
+}
+#rotatey:hover > .small{
+	transform: rotateY(360deg); 
+	border: 5px solid red;
+	width: 70px;
+	height: 70px;
+
+}
+#rotatexyz:hover > .small{
+	transform: rotate3d(2.5, 1.2, -1.5, 360deg);
+	border: 5px solid red;
+	width: 70px;
+	height: 70px;
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미디어 쿼리 사용하기</title>
+	<link rel="stylesheet" href="css/lab5-final.css">
+  <style>
+    body {
+      background: url(images/bg0.jpg) no-repeat fixed;  /* 기본 배경 이미지 지정 */
+      background-size: cover;
+    }
+    #container {
+      display:none;
+    }
+    @media screen and (max-width:1024px) {
+      body {
+        background: url(images/bg1.jpg) no-repeat fixed;  /* 가로가 1024px 이하면 bg1.jpg 지정 */
+        background-size: cover;
+      }
+    }
+    @media screen and (max-width:900px) {
+      body {
+        background-color: #fff;
+        background: none;
+      }
+      #container {
+      display:block;
+    }
+   }
+    @media screen and (max-width:768px) {
+      body {
+        background: url(images/bg2.jpg) no-repeat fixed;  /* 가로가 768px 이하면 bg2.jpg 지정 */
+        background-size:cover;
+      }
+    }
+    @media screen and (max-width:320px) {
+      body {
+        background: url(images/bg3.jpg) no-repeat fixed;  /* 가로가 320px 이하면 bg3.jpg 지정 */
+        background-size: cover; 
+      }
+    }
+    /* 공 바운스 */
+
+
+
+    #container{
+      position: relative;
+      margin:30px auto;	
+      width:600px;
+      height:800px;
+      padding:20px;  
+    }
+
+
+    .ad {
+    position:absolute;
+    right: 5px;
+    bottom: 95px;  
+    width: 70px;
+    height: 120px;
+    overflow:hidden;
+  }
+
+    .ad img {
+        width: 70px;
+        height: 120px;
+        object-fit:cover;
+    }
+
+    .box {
+        position:absolute;
+        left: 25px;
+        bottom: 90px;
+        --d:0.8s;   
+        width: 525px;
+        height: 190px;
+        padding-top:50px;
+        display: flex;
+        align-items: flex-end;
+        overflow:hidden;
+    }
+
+    #ball {
+        width:30px;
+        animation-timing-function:cubic-bezier(.17,.76,.58,1); /* control this: https://cubic-bezier.com/#.17,.76,.58,1*/
+        animation-iteration-count:2;
+        animation-direction: alternate; 
+        animation-name:t1,t2,t3,t4,t5; 
+        animation-duration:
+            var(--d),
+            calc(var(--d)/2),
+            calc(var(--d)/3),
+            calc(var(--d)/4),
+            calc(var(--d)/5);
+        animation-delay: 
+            calc(var(--d)*-1), 
+            calc(var(--d)), 
+            calc(var(--d)   + 2*var(--d)/2), 
+            calc(var(--d)*2 + 2*var(--d)/3), 
+            calc(var(--d)*2 + 2*var(--d)/3 + 2*var(--d)/4); 
+    }
+
+    @keyframes t1{to {transform:translateY(-160px)}}
+    @keyframes t2{to {transform:translateY(-110px)}}
+    @keyframes t3{to {transform:translateY(-60px)}}
+    @keyframes t4{to {transform:translateY(-30px)}}
+    @keyframes t5{to {transform:translateY(-10px)}}
+
+    .box > span {
+        animation:m calc(var(--d)*2 + 2*var(--d)/3 + 2*var(--d)/4 + 2*var(--d)/5) linear forwards;
+    }
+
+    @keyframes m{to {transform:translateX(470px)}}
+
+
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>Web Programming</h1>
+    <p>공부할 주제를 기록해 보세요</p>
+    <p>공부가 끝난 것은 휴지통을 클릭해서 삭제할 수 있습니다.</p>
+    <form action="">
+      <input type="text" id="subject" autofocus>
+      <button onclick="newRegister(); return false;">추가</button>
+    </form>
+    <hr>  
+    <ul id="itemList"></ul>  
+
+    <!-- 풍선 -->
+    <div class="ad">
+      <span><img src="images/balloon.png" ></span>
+    </div>
+    <!-- 공 -->
+    <div class="box">
+      <span><img src="images/ball.png" class="effect" id = "ball"></span>
+    </div>
+
+  </div>
+
+  <script>
+    function newRegister() {
+      var newItem = document.createElement("li");  // 요소 노드 추가
+      var subject = document.querySelector("#subject");  // 폼의 텍스트 필드
+      var newText = document.createTextNode(subject.value);  // 텍스트 필드의 값을 텍스트 노드로 만들기
+      newItem.appendChild(newText);   // 텍스트 노드를 요소 노드의 자식 노드로 추가
+
+      var trash = document.createElement('img');
+      trash.src = 'images/trash.png';
+      trash.style.width="25px";
+      trash.style.float = "right";
+      trash.style.marginRight = "10px"
+      newItem.appendChild(trash);
+
+      var itemList = document.querySelector("#itemList");  // 웹 문서에서 부모 노드 가져오기 
+      itemList.insertBefore(newItem, itemList.childNodes[0]);  // 자식 노드중 첫번째 노드 앞에 추가
+      // itemlist.appendChild(newItem);
+
+      subject.value="";
+
+      var items = document.querySelectorAll("li");
+      for(i=0; i<items.length;i++){
+        trash.addEventListener("click", function(){
+          if(trash.parentNode.parentNode)  
+            trash.parentNode.parentNode.removeChild(trash.parentNode);// 부모의 부모에서 삭제
+        });
+      }
+    }
+    var ad= document.querySelector('.ad');
+    var box = document.querySelector('.box');
+    var container = document.querySelector("#container");
+
+    ad.addEventListener("mouseover", function() {
+      box.style.display="none";
+      void box.offsetWidth;
+      box.style.display="flex";
+    });
+    
+
+  </script>
+  
+</body>
+</html>
