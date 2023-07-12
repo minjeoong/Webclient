@@ -7,15 +7,21 @@
 
 1. node.js 설치 -  운영체제별 LTS(안정화) 버전 다운로드/실행설치
 
+
     https://nodejs.org/ko/download
+
 
 2. 웹서버 모듈("express") 설치
 
+
     npm install --global express
+
 
 3. 프록시 서버 모듈("cors", "cors-anywhere") 설치
 
+
     npm install cors cors-anywhere
+
 
 4. VS Code 확장모듈("code runner") 설치
    
