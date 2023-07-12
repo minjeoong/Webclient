@@ -13,6 +13,9 @@
 
 2. 웹서버 모듈("express") 설치
 
+    npm install --global express
+
+
 
     npm install --global express
 
