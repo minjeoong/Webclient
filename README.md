@@ -1,13 +1,16 @@
 # Webclient
 웹 클라이언트 컴퓨팅 학부 프로젝트
 
+
+
+
 ## 환경 설치 및 테스팅 (lap 6, lap 7, proj 2)
-***
 
-node.js 설치 -  운영체제별 LTS(안정화) 버전 다운로드/실행설치
 
+1. node.js 설치 -  운영체제별 LTS(안정화) 버전 다운로드/실행설치
+₩₩₩
     https://nodejs.org/ko/download
-
+₩₩₩
 웹서버 모듈("express") 설치
 
     npm install --global express
